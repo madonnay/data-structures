@@ -1,5 +1,7 @@
-from bisection_implementation import (analyze_func, bisection_iter,
-                                      random_email_list)
+from analysis import analyze_func
+from bisection_implementation import bisection_iter
+from generators import random_email_list
+
 
 domain_list = ["yaexample.com", "goexample.com", "example.com"]
 
@@ -12,8 +14,8 @@ emails.append(target)
 sorted_emails = sorted(emails)
 
 # Search for target and record timing
-(index, found), search_time = analyze_func(bisection_iter, target, sorted_emails)
-
+(index, found), search_time = analyze_func(bisection_iter, target,
+                                           sorted_emails)
 # Print results
 print(found)
 if index:
